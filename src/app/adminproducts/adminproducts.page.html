@@ -1,31 +1,41 @@
 <ion-header>
   <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>منتجاتي</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-grid>
-        <ion-row *ngFor="let item of list | async">
-          <ion-col>
-            <img class="imagedev" [src]="item.payload.val().image" style="width: 140px ; height: 140px;">
-            <p style="color: #000">السعر: <span style="color: #3880ff">${{item.payload.val().price}}</span></p>
-          </ion-col>
-          <ion-col>
-            <h6 style="text-align: center">{{item.payload.val().name}}</h6>
-            <p style=" font-size: 12px; text-align: right">{{item.payload.val().description}}</p>
-            <p style="text-align: center" style="color: #000">حالة المنتج: <span
-                style="color: #3880ff">{{item.payload.val().status}}</span></p>
-            <div style="text-align: center">
-              <ion-button color="danger" (click)="del(item.payload.key)">
-                <ion-icon name="trash"></ion-icon>حذف
-              </ion-button>
-            </div>
-          </ion-col>
-          <hr>
-        </ion-row>
-      </ion-grid>
+<ion-content>
+  <ion-card *ngFor="let item of list | async">
+    <img style="height: 200px;width: 100%;" class="imagedev" [src]="item.payload.val().image">
+    <ion-card-content>
+      <ion-card-title>
+        <p style="text-align: center;font-size: 18px">
+          {{item.payload.val().name}}
+        </p><br>
+      </ion-card-title>
+      <p style="text-align: right">
+        <span style="color:#3880ff">الوصف:</span> {{item.payload.val().description}}
+      </p><br><br>
+      <ion-row style="text-align: center">
+        <ion-col col-6>
+          <ion-label style="color:#3880ff">السعر: </ion-label>
+          <ion-label> {{item.payload.val().price}}
+          </ion-label>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label style="color:#3880ff">حالة المنتج: </ion-label>
+          <ion-label> {{item.payload.val().status}} </ion-label>
+        </ion-col>
+      </ion-row>
+
+      <div style="text-align: center">
+        <ion-button color="danger" (click)="del(item.payload.key)">
+          <ion-icon name="trash"></ion-icon>حذف
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

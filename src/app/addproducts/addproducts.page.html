@@ -1,60 +1,59 @@
 <ion-header style="direction: rtl">
-    <ion-toolbar color="primary">
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-      <ion-title id="navtitle">
-        أنتيكــا
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content padding>
-    <h2 style="font-size: 24px; text-align: center;">الاقسام</h2>
-  
-    <ion-grid style="text-align: center">
-      <ion-row>
-        <ion-col (click)="buy('clothes')">
-          <div class="container">
-            <img src="./assets/imgs/product/home/clothes.jpg">
-            <div class="centered">ملابس</div>
-          </div>
-        </ion-col>
-        <ion-col (click)="buy('accessories')">
-          <div class="container">
-            <img src="./assets/imgs/product/home/accessories.jpg">
-            <div class="centered">اكسسوارات</div>
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col (click)="buy('Perfumes')">
-          <div class="container">
-            <img src="./assets/imgs/product/home/perfumes.jpg">
-            <div class="centered">عطور</div>
-          </div>
-        </ion-col>
-        <ion-col (click)="buy('Gifts')">
-          <div class="container">
-            <img src="./assets/imgs/product/home/gifts.jpg">
-            <div class="centered">هدايا</div>
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col (click)="buy('Stationery')">
-          <div class="container">
-            <img src="./assets/imgs/product/home/stationery.jpg">
-            <div class="centered">قرطاسية</div>
-          </div>
-        </ion-col>
-        <ion-col (click)="buy('Appliances')">
-          <div class="container">
-            <img src="./assets/imgs/product/home/appliances.jpg">
-            <div class="centered">اجهزة</div>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-content>
-  
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title id="navtitle">
+      أنتيكــا
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 style="font-size: 24px; text-align: center;">اختر القسم</h2>
+
+  <ion-grid style="text-align: center">
+    <ion-row>
+      <ion-col (click)="buy('clothes')">
+        <div class="container">
+          <img src="./assets/imgs/product/home/clothes.jpg">
+          <div class="centered">ملابس</div>
+        </div>
+      </ion-col>
+      <ion-col (click)="buy('accessories')">
+        <div class="container">
+          <img src="./assets/imgs/product/home/accessories.jpg">
+          <div class="centered">اكسسوارات</div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="buy('Perfumes')">
+        <div class="container">
+          <img src="./assets/imgs/product/home/perfumes.jpg">
+          <div class="centered">عطور</div>
+        </div>
+      </ion-col>
+      <ion-col (click)="buy('Gifts')">
+        <div class="container">
+          <img src="./assets/imgs/product/home/gifts.jpg">
+          <div class="centered">هدايا</div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="buy('Stationery')">
+        <div class="container">
+          <img src="./assets/imgs/product/home/stationery.jpg">
+          <div class="centered">قرطاسية</div>
+        </div>
+      </ion-col>
+      <ion-col (click)="buy('Appliances')">
+        <div class="container">
+          <img src="./assets/imgs/product/home/appliances.jpg">
+          <div class="centered">اجهزة</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

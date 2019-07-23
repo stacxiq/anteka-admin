@@ -1,5 +1,7 @@
 {
   "name": "adminpanel",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
