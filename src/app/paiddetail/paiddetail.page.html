@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>التفاصيل</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <img style="height: 200px;width: 100%;" class="imagedev" [src]="product.img" >
+
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label style="text-align: right">
+            <p>المنتج</p>
+            <h2>{{product?.name}}</h2>
+          </ion-label>
+        </ion-item>
+   
+            <ion-item>
+                <ion-icon name="person" slot="start"></ion-icon>
+                <ion-label style="text-align: right">
+                  <p> التفاصيل </p>
+                  <h2>{{product?.desc}}</h2>
+                </ion-label>
+              </ion-item>
+              <ion-item>
+                  <ion-icon name="mail" slot="start"></ion-icon>
+                  <ion-label style="text-align: right">
+                    <p> السعر</p>
+                    <h2>{{product?.price}} $ </h2>
+                  </ion-label>
+                </ion-item>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label style="text-align: right">
+            <p> الكميه</p>
+            <h2>{{product?.count}}</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item *ngIf="product?.status">
+          <ion-icon name="information" slot="end"></ion-icon>
+          <ion-label style="text-align: right">
+            <p> الحالة</p>
+            <h2>{{product?.status}}</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="mail" slot="start"></ion-icon>
+            <ion-label style="text-align: right">
+              <p> اسم المشتري</p>
+              <h2>{{product?.username}}</h2>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="mail" slot="start"></ion-icon>
+              <ion-label style="text-align: right">
+                <p> العنوان</p>
+                <h2>{{product?.address}}</h2>
+              </ion-label>
+            </ion-item>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label style="text-align: right">
+            <p>رقم الهاتف</p>
+            <h2>{{product?.phone}}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>الطلبات</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-list>
+        <ion-item *ngFor="let item of items" style="margin-top:10px;" (click)="passid(item[5])">
+            <p style="font-size: 18px;text-align: start;color:#fff">{{item[0]}}</p>
+          <ion-avatar item-end>
+            <img style="width: 42px;height: 42px;margin-top:5px;" src="{{item[2]}}">
+          </ion-avatar>
+          <h2 style="text-align: end;font-size: 18px">{{item[3]}}</h2>
+          <h3 style="text-align: end;font-size: 18px;margin-bottom: 12px;">{{item[4]}}</h3>
+        </ion-item>
+      </ion-list>
+</ion-list>
+</ion-content>

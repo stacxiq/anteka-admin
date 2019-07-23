@@ -1,0 +1,43 @@
+.toolbar-title-md {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #424242;
+}
+#notification-button {
+position: relative;
+top:1px;
+margin: 5px;
+color: #fff;
+right: 1px;
+overflow: visible!important;
+}
+
+
+#notifications-badge {
+background-color: red;
+position: absolute;
+top: -3px;
+right: -3px;
+border-radius: 100%;
+}
+
+.container {
+position: relative;
+text-align: center;
+color: white;
+}
+
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-weight: bold;
+color:#000;
+font-size: 20px;
+}
+
+img {
+  border-radius: 5px;
+  border: solid 1px #3880ff;
+}

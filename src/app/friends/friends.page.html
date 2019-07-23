@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>قائمه الاصدقاء</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list no-lines>
+        <ion-list-header style="color: #000">
+          Requests
+        </ion-list-header>
+          <ion-item *ngFor="let item of myrequests">
+          <ion-avatar item-left>
+            <img src="{{item.image}}">
+          </ion-avatar>
+          <h4 style="color:#000" *ngIf="item.name">{{item.name}}</h4>
+            <ion-button color="secondary" (click)="accept(item)">
+              <ion-icon name="checkmark"></ion-icon>
+              ADD
+            </ion-button>
+            <ion-button color="danger" (click)="ignore (item)">
+              <ion-icon name="trash"></ion-icon>
+              NOPE
+            </ion-button>
+            </ion-item>
+        <ion-list-header style="color: #000">
+          Friends
+        </ion-list-header>
+        <ion-item *ngFor="let item of myfriends" (click)="friendchat(item)">
+          <ion-avatar item-left>
+            <img src={{item.image}}>
+          </ion-avatar>
+          <h3 style="color:#000">{{item.name}}</h3>
+        </ion-item>
+      </ion-list>
+
+</ion-content>

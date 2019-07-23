@@ -1,0 +1,39 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>المنتجات</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngFor="let item of list | async " style="margin-top:35px;">
+        <img style="height: 200px;width: 100%;" class="imagedev" [src]="item.payload.val().image" >
+        <ion-card-content>
+          <ion-card-title>
+            <h3 style="text-align: center;color: #fff;font-size: 20px">
+              {{item.payload.val().name}}
+            </h3>
+
+            </ion-card-title>
+          <p style="text-align: right;color:#fff">
+           {{item.payload.val().description}}
+          </p>
+        </ion-card-content>
+        <ion-item>
+            <span item-start></span>
+            <span item-start></span>
+            <ion-button icon-start clear item-end (click)="add(item.payload.val(),item.payload.key)">
+              <ion-icon name="add"></ion-icon>
+              add
+            </ion-button>
+            <ion-button icon-start clear item-start (click)="del(item.payload.key)">
+                <ion-icon name="trash"></ion-icon>
+                delete
+            </ion-button>
+          </ion-item>
+
+        </ion-card>
+</ion-content>
+
