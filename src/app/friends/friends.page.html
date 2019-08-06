@@ -9,23 +9,6 @@
 
 <ion-content padding>
   <ion-list no-lines>
-    <ion-list-header style="color: #000">
-      الطلبات
-    </ion-list-header>
-    <ion-item *ngFor="let item of myrequests">
-      <ion-avatar item-left>
-        <img src="{{item.image}}">
-      </ion-avatar>
-      <h6 style="color:#000; margin:5px" *ngIf="item.name">{{item.name}}</h6>
-      <ion-button shape="block" fill="outline" color="secondary" (click)="accept(item)">
-        <ion-icon name="checkmark"></ion-icon>
-        اضافة
-      </ion-button>
-      <ion-button shape="block" fill="outline" color="danger" (click)="ignore (item)">
-        <ion-icon name="trash"></ion-icon>
-        حذف
-      </ion-button>
-    </ion-item>
     <ion-list-header style="color: #000;">
       الاصدقاء
     </ion-list-header>
