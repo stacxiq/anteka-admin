@@ -90,9 +90,7 @@ export class RequestService {
         this.myfriends = [];
         for (var j in friendsuid)
           for (var key in users) {
-            if (friendsuid[j] === users[key].uid) {
               this.myfriends.push(users[key]);
-            }
           }
         this.events.publish('friends');
       }).catch((err) => {

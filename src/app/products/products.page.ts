@@ -10,27 +10,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./products.page.scss'],
 })
 export class ProductsPage implements OnInit {
+
   list: Observable<any>;
-  category:any;
+  category: any;
+
   ngOnInit(): void {
-    this.ar.queryParams.subscribe((data)=>{
+    this.ar.queryParams.subscribe((data) => {
       console.log(data.item);
       this.category = data.item;
       this.list = this.db.list(`waitingproducts/${data.item}`).snapshotChanges();
-
     });
     console.log(this.category);
   }
   constructor(
     public db: AngularFireDatabase,
-    public ar:ActivatedRoute,
-     public alert: AlertController,
-    public toast: ToastController) {
-
-
-
-  }
-
+    public ar: ActivatedRoute,
+    public alert: AlertController,
+    public toast: ToastController) { }
 
   async del(item: any) {
     const alert = await this.alert.create({

@@ -15,7 +15,7 @@ export class PaidPage implements OnInit {
   constructor(
     public db: AngularFireDatabase,
     public router: Router,
-    public extra:ExtraService,
+    public extra: ExtraService,
   ) {
   }
 

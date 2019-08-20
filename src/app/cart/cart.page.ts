@@ -10,9 +10,8 @@ import { Router } from '@angular/router';
 export class CartPage implements OnInit {
   users: any = [];
   items: any;
-  constructor( private db: AngularFireDatabase, private router:Router
-    ) {
-  }
+  constructor(private db: AngularFireDatabase, private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.db.object(`cart`).snapshotChanges().subscribe(c => {
@@ -27,7 +26,6 @@ export class CartPage implements OnInit {
       }
     });
   }
-
 
   passid(id) {
     this.router.navigate(['/cartdetail'], {

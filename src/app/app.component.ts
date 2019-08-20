@@ -18,27 +18,27 @@ export class AppComponent {
     {
       title: 'اضافه منتجات انتيكا',
       url: '/addproducts',
-      icon: 'home'
+      icon: 'add'
     },
     {
       title: 'المبيعات ',
       url: '/paid',
-      icon: 'home'
+      icon: 'card'
     },
     {
       title: 'الطلبات',
       url: '/cart',
-      icon: 'home'
+      icon: 'checkmark'
     },
     {
       title: 'قائمة الاصدقاء',
       url: '/friends',
-      icon: 'home'
+      icon: 'people'
     },
     {
       title: 'منتجاتي',
       url: '/adminproducts',
-      icon: 'home'
+      icon: 'list'
     }
   ];
 
@@ -52,7 +52,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleBlackTranslucent();
       this.splashScreen.hide();
     });
   }
