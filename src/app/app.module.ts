@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { firebaseConfig } from './app.firebase';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { firebaseConfig } from './app.firebase';
   providers: [
     StatusBar,
     SplashScreen,
+    Keyboard,
     Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

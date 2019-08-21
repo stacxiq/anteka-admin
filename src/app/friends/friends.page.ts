@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { ChatService } from '../services/chat.service';
 import { RequestService } from '../services/request.service';
 import { Router } from '@angular/router';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-friends',
@@ -13,18 +14,15 @@ import { Router } from '@angular/router';
 })
 export class FriendsPage implements OnInit {
   ngOnInit(): void {
-    this.requestservice.getmyrequests();
+    
     this.requestservice.getmyfriends();
-    this.events.subscribe('gotrequests', () => {
-      this.myrequests = [];
-      this.myrequests = this.requestservice.userdetails;
-    })
     this.events.subscribe('friends', () => {
+      this.loader.presentLoading();
       this.myfriends = [];
       this.myfriends = this.requestservice.myfriends;
     });
+    this.loader.dismiss();
   }
-  myrequests;
   myfriends;
   firereq = firebase.database().ref('/requests');
   constructor( 
@@ -34,16 +32,9 @@ export class FriendsPage implements OnInit {
     public platform: Platform,
     public router:Router,
     public afireauth: AngularFireAuth,
+    public loader: LoadingService,
     private chatservice: ChatService) {
   }
-
-  ionViewDidLoad() {
-
-  }
-  ionViewWillEnter() {
-
-  }
-
   ionViewDidLeave() {
     this.events.unsubscribe('gotrequests');
     this.events.unsubscribe('friends');
